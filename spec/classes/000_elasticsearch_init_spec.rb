@@ -510,6 +510,8 @@ describe 'elasticsearch', type: 'class' do
             'snapshot_repository'
           when 'ilm_policies'
             'ilm_policy'
+          when 'slm_policies'
+            'slm_policy'
           else
             string[0..-2]
           end
@@ -525,6 +527,7 @@ describe 'elasticsearch', type: 'class' do
             'foo' => { 'source' => 'puppet:///path/to/foo.groovy' }
           },
           'snapshot_repositories' => { 'backup' => { 'location' => '/backups' } },
+          'slm_policies' => { 'foo' => { 'content' => {} } },
           'templates' => { 'foo' => { 'content' => {} } },
           'users' => { 'elastic' => { 'password' => 'foobar' } },
           'index_templates' => { 'foo' => { 'content' => {} } },
